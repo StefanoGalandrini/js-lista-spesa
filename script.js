@@ -34,7 +34,11 @@ btnAdd.addEventListener("click", function () {
 	eleList.innerHTML = ``;
 	i = 0;
 	let newItem = document.getElementById("element").value;
-	arrList.push(newItem);
+
+	if (!arrList.includes(newItem)) {
+		arrList.push(newItem);
+	}
+
 	while (i < arrList.length) {
 		eleList.innerHTML += `<li>${arrList[i]}</li>`;
 		i++;
