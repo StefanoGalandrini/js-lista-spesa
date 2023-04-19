@@ -45,3 +45,22 @@ btnAdd.addEventListener("click", function () {
 		i++;
 	} while (i < arrList.length);
 });
+
+btnAdd.addEventListener("click", function () {
+	let newItem = document.getElementById("element").value;
+	console.log(newItem);
+	while (i + 1 < arrList.length) {
+		arrList.push(newItem);
+		eleList.innerHTML += `<li>${arrList[i]}</li>`;
+		i++;
+	}
+});
+
+/*
+	do {
+		arrList.push(newItem);
+		eleList.innerHTML += `<li>${arrList[i]}</li>`;
+		i++;
+	} while (i < arrList.length);
+});
+*/
