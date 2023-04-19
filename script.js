@@ -4,51 +4,20 @@ Data una lista della spesa, stampare sulla pagina
 gli elementi della lista individualmente con un ciclo for.
 */
 
-// const arrList = [
-// 	"pomodori",
-// 	"funghi",
-// 	"latte",
-// 	"carne",
-// 	"caffè",
-// 	"peperoni",
-// 	"biscotti",
-// 	"salmone",
-// 	"pasta",
-// 	"prova",
-// ];
-
 const eleList = document.querySelector("#list");
-
-// soluzione con il ciclo for
-/*
-for (let i = 0; i < arrList.length; i++) {
-	console.log(arrList[i]);
-	eleList.innerHTML += `<li>${arrList[i]}</li>`;
-}
-*/
-
-// soluzione con il ciclo while
 
 // adds items to the array and displays them
 let i = 0;
 const arrList = [];
 const btnAdd = document.querySelector(".btn-input");
+const btnDelete = document.querySelector(".btn-delete");
 const btnReset = document.querySelector(".btn-reset");
 eleList.innerHTML = ``;
 
 /*
-btnAdd.addEventListener("click", function () {
-	let newItem = document.getElementById("element").value;
-	console.log(newItem);
-	do {
-		arrList.push(newItem);
-		eleList.innerHTML += `<li>${arrList[i]}</li>`;
-		i++;
-	} while (i < arrList.length);
-});
-*/
+** used a flag to break an infinite loop
+** since it's a "fake" cicle
 
-/*
 btnAdd.addEventListener("click", function () {
 	let endWhile = true;
 	let newItem = document.getElementById("element").value;
@@ -75,4 +44,9 @@ btnAdd.addEventListener("click", function () {
 btnReset.addEventListener("click", function () {
 	eleList.innerHTML = ``;
 	arrList = [];
+});
+
+btnDelete.addEventListener("click", function () {
+	eleList.removeChild(eleList.lastElementChild);
+	arrList.pop();
 });
