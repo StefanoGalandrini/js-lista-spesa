@@ -48,6 +48,7 @@ btnAdd.addEventListener("click", function () {
 });
 */
 
+/*
 btnAdd.addEventListener("click", function () {
 	let endWhile = true;
 	let newItem = document.getElementById("element").value;
@@ -58,17 +59,20 @@ btnAdd.addEventListener("click", function () {
 		i++;
 	}
 });
+*/
+
+btnAdd.addEventListener("click", function () {
+	eleList.innerHTML = ``;
+	i = 0;
+	let newItem = document.getElementById("element").value;
+	arrList.push(newItem);
+	while (i < arrList.length) {
+		eleList.innerHTML += `<li>${arrList[i]}</li>`;
+		i++;
+	}
+});
 
 btnReset.addEventListener("click", function () {
 	eleList.innerHTML = ``;
 	arrList = [];
 });
-
-/*
-	do {
-		arrList.push(newItem);
-		eleList.innerHTML += `<li>${arrList[i]}</li>`;
-		i++;
-	} while (i < arrList.length);
-});
-*/
