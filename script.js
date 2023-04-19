@@ -48,7 +48,7 @@ btnAdd.addEventListener("click", function () {
 
 btnReset.addEventListener("click", function () {
 	eleList.innerHTML = ``;
-	arrList = [];
+	arrList.length = 0;
 });
 
 btnDelete.addEventListener("click", function () {
