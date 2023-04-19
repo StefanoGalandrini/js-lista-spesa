@@ -33,9 +33,9 @@ for (let i = 0; i < arrList.length; i++) {
 let i = 0;
 const arrList = [];
 const btnAdd = document.querySelector(".btn-input");
-const btnEnd = document.querySelector(".btn-end");
 eleList.innerHTML = ``;
 
+/*
 btnAdd.addEventListener("click", function () {
 	let newItem = document.getElementById("element").value;
 	console.log(newItem);
@@ -45,13 +45,15 @@ btnAdd.addEventListener("click", function () {
 		i++;
 	} while (i < arrList.length);
 });
+*/
 
 btnAdd.addEventListener("click", function () {
+	let endWhile = true;
 	let newItem = document.getElementById("element").value;
-	console.log(newItem);
-	while (i + 1 < arrList.length) {
+	while (endWhile) {
 		arrList.push(newItem);
 		eleList.innerHTML += `<li>${arrList[i]}</li>`;
+		endWhile = false;
 		i++;
 	}
 });
