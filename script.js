@@ -12,6 +12,7 @@ const arrList = [];
 const btnAdd = document.querySelector(".btn-input");
 const btnDelete = document.querySelector(".btn-delete");
 const btnReset = document.querySelector(".btn-reset");
+let newItem;
 eleList.innerHTML = ``;
 
 /*
@@ -33,7 +34,7 @@ btnAdd.addEventListener("click", function () {
 btnAdd.addEventListener("click", function () {
 	eleList.innerHTML = ``;
 	i = 0;
-	let newItem = document.getElementById("element").value;
+	newItem = document.getElementById("element").value;
 
 	if (!arrList.includes(newItem)) {
 		arrList.push(newItem);
@@ -51,6 +52,18 @@ btnReset.addEventListener("click", function () {
 });
 
 btnDelete.addEventListener("click", function () {
-	eleList.removeChild(eleList.lastElementChild);
-	arrList.pop();
+	eleList.innerHTML = ``;
+	i = 0;
+	newItem = document.getElementById("element").value;
+	console.log(newItem);
+
+	if (arrList.includes(newItem)) {
+		const index = arrList.indexOf(newItem);
+		arrList.splice(index, 1);
+	}
+
+	while (i < arrList.length) {
+		eleList.innerHTML += `<li>${arrList[i]}</li>`;
+		i++;
+	}
 });
