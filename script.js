@@ -33,6 +33,7 @@ for (let i = 0; i < arrList.length; i++) {
 let i = 0;
 const arrList = [];
 const btnAdd = document.querySelector(".btn-input");
+const btnReset = document.querySelector(".btn-reset");
 eleList.innerHTML = ``;
 
 /*
@@ -56,6 +57,11 @@ btnAdd.addEventListener("click", function () {
 		endWhile = false;
 		i++;
 	}
+});
+
+btnReset.addEventListener("click", function () {
+	eleList.innerHTML = ``;
+	arrList = [];
 });
 
 /*
